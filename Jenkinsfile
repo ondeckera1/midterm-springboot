@@ -19,7 +19,7 @@ pipeline {
                 sh '''
                 curl -v -u admin:Claudiarenee1 \
                 --upload-file target/demo-0.0.1-SNAPSHOT.jar \
-                http://localhost:8081/repository/homework6/demo-0.0.1-SNAPSHOT.jar
+                http://nexus:8081/repository/homework6/demo-0.0.1-SNAPSHOT.jar
                 '''
             }
         }
