@@ -13,5 +13,15 @@ pipeline {
                 sh 'ls target'
             }
         }
+
+        stage('Upload to Nexus') {
+            steps {
+                sh '''
+                curl -v -u admin:YOUR_NEXUS_PASSWORD \
+                --upload-file target/demo-0.0.1-SNAPSHOT.jar \
+                http://localhost:8081/repository/homework6/demo-0.0.1-SNAPSHOT.jar
+                '''
+            }
+        }
     }
 }
